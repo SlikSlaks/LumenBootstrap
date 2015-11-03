@@ -8,7 +8,7 @@
 	<meta name="keywords" content="business, corporate, corporate website, creative, html5, marketing, multipurpose, responsive, site templates">
 
   	<link rel="shortcut icon" href="img/favicon.png">
-    <title>Passion</title>
+    <title>Люмен - Оптика</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
 
-  <body style="background-color:#EB5055">
+  <body style="background-color:#A3A7B9">
 
    
   
@@ -32,8 +32,8 @@
     <div id="top" class="header">
       <div class="col-xs-12 col-md-5 col-md-offset-4 col-sm-12">
       <div class="submitted">
-        <h3>Thank you. Your Request has been submitted.</h3>
-        <h1><a href="index.html" class="btn btn-default btn-lg" type="button">Go Home</a></h1>
+        <h3>Спасибо! Ваш отзыв отправлен!</h3>
+        <h1><a href="index.php" class="btn btn-default btn-lg" type="button">На Главную</a></h1>
       </div>
     </div>
     </div>

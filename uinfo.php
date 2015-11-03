@@ -31,16 +31,16 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand logo2" href="index.html"></a> </div>
+      <a class="navbar-brand logo2" href="index.php"></a> </div>
     <div class="navbar-collapse collapse ">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html#top"><br>Главная</a></li>
-        <li><a href="sale.html"><br>Акции</a></li>
-        <li><a href="catalog.html"><br>Каталог</a></li>
-        <li><a href="usefulinfo.html">Полезная<br>Информация</a></li>
-        <li><a href="respond.html">Оставить<br>Отзыв</a></li>
+        <li><a href="index.php#top"><br>Главная</a></li>
+        <li><a href="sale.php"><br>Акции</a></li>
+        <li><a href="catalog.php"><br>Каталог</a></li>
+        <li><a href="uinfo.php">Полезная<br>Информация</a></li>
+        <li><a href="respond.php">Оставить<br>Отзыв</a></li>
         <li><a href="#"><br>О нас</a></li>
-        <li><a href="index.html#contact"><br>Контакты</a></li>
+        <li><a href="index.php#contact"><br>Контакты</a></li>
         <li class="min-info">г. Ростов-на-Дону<br>8 (928) 779-44-79</li>
       </ul>
     </div>
@@ -62,6 +62,8 @@
       </div>
     </div>
   </div>
+
+
 
 <!-- Footer -->
 <footer>
