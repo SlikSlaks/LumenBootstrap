@@ -24,10 +24,17 @@
 				}
 
 				if(!isset($_GET['allowed'])){
+					$query=mysql_query("select count(id) as 'num' from responds where allowed='0'") or die(mysql_error());
+					$result=mysql_fetch_assoc($query);
+					$allowed[0]=$result['num'];
+					$query=mysql_query("select count(id) as 'num' from responds where allowed='1'") or die(mysql_error());
+					$result=mysql_fetch_assoc($query);
+					$allowed[1]=$result['num'];
+
 					echo"
 					<a href=index.php>Назад</a><br>
-					<a href=respond.php?allowed=1>Одобренные отзывы</a><br>
-					<a href=respond.php?allowed=0>Непросмотренные отзывы</a><br>
+					<a href=respond.php?allowed=1>Одобренные отзывы [".$allowed[1]."]</a><br>
+					<a href=respond.php?allowed=0>Непросмотренные отзывы [".$allowed[0]."]</a><br>
 					";
 				}else{
 					echo"

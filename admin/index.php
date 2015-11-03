@@ -5,10 +5,14 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>Lumen-Optika</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/custom.css">
 	</head>
 	<body>
 		<?php 
+			if($_GET['act']=='logout'){
+				unset($_SESSION['auth']);
+			}
 			if($_POST['login']=='admin' && $_POST['password']=='admin'){
 				$_SESSION['auth']=true;
 			} 
@@ -18,13 +22,19 @@
 				<a href=sales.php>Акции</a><br>
 				<a href=respond.php>Отзывы</a><br>
 				<a href=slider.php>Слайдер</a><br>
+				<a href=index.php?act=logout>Выйти</a><br>
 				";
-			} else{ echo" 
-			<form method=post>
-			<input type=text placeholder=login name=login>
-			<input type=password placeholder=password name=password>
-			<input type=submit value=submit>
-			</form>";}
+			}else{ 
+				echo" 
+				<a href=../index.php>На главную</a><br><br>
+				<form method=post>
+				<input type=text placeholder=Логин name=login><br><br>
+				<input type=password placeholder=Пароль name=password><br><br>
+				<input type=submit value=Войти>
+				</form>";
+			}
+
+
 		?>
 		
 	</body>
