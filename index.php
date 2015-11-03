@@ -31,14 +31,14 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand logo2" href="index.html"></a> </div>
+      <a class="navbar-brand logo2" href="index.php"></a> </div>
     <div class="navbar-collapse collapse ">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html#top"><br>Главная</a></li>
-        <li><a href="sale.html"><br>Акции</a></li>
-        <li><a href="catalog.html"><br>Каталог</a></li>
-        <li><a href="usefulinfo.html">Полезная<br>Информация</a></li>
-        <li><a href="respond.html">Оставить<br>Отзыв</a></li>
+        <li><a href="index.php#top"><br>Главная</a></li>
+        <li><a href="sale.php"><br>Акции</a></li>
+        <li><a href="catalog.php"><br>Каталог</a></li>
+        <li><a href="uinfo.php">Полезная<br>Информация</a></li>
+        <li><a href="respond.php">Оставить<br>Отзыв</a></li>
         <li><a href="#"><br>О нас</a></li>
         <li><a href="#contact"><br>Контакты</a></li>
         <li class="min-info">г. Ростов-на-Дону<br>8 (928) 779-44-79</li>
@@ -133,66 +133,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12 col-sm-12">
-        <div class=" container TitleSection">
-          <header class="page-head">
-            <h1>Test<small> // Test</small></h1>
-          </header>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nibh erat, sagittis sit amet congue at, aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris. aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris.</p>
-        <div class="row">
-          <div class="ser_wrap_3 option3">
-            <div class="col-xs-12 col-md-3 col-sm-12">
-              <ul>
-                <li>
-                  <div class="icon_ser"><i class="fa fa-check"></i></div>
-                  <div class="wrap">
-                    <h3>Test</h3>
-                    <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 col-sm-12">
-              <ul>
-                <li>
-                  <div class="icon_ser"><i class="fa fa-check"></i></div>
-                  <div class="wrap">
-                    <h3>Test</h3>
-                    <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 col-sm-12">
-              <ul>
-                <li>
-                  <div class="icon_ser"><i class="fa fa-check"></i></div>
-                  <div class="wrap">
-                    <h3>Test</h3>
-                    <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 col-sm-12">
-              <ul>
-                <li>
-                  <div class="icon_ser"><i class="fa fa-check"></i></div>
-                  <div class="wrap">
-                    <h3>Test</h3>
-                    <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <br>
 </div> 
 
@@ -207,132 +147,6 @@
 
 </div>
 </div>
-<!-- /Services --> 
-
-<!-- Portfolio -->
-<!-- <div id="portfolio" class="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12 col-sm-12">
-        <div class=" container TitleSection">
-          <header class="page-head">
-            <h1>Каталог</h1>
-          </header>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nibh erat, sagittis sit amet congue at, aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris. aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris.</p>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12 col-sm-12">
-
-        <div id="filter_container" class="clearfix portfolioContainer">
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/2.jpg" alt="filter" /> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/3.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/2.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/3.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element other print" data-category="other">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/2.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element copywriting" data-category="copywriting">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/3.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element copywriting" data-category="copywriting">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/3.jpg" alt="filter" /> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/2.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element Logo_design copywriting" data-category="Logo_design">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/2.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- /Portfolio --> 
-
 <!--Contact -->
 <div id="contact" class="contact">
   <div class="container">
