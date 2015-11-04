@@ -1,3 +1,5 @@
+<?php include('connect.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,26 +28,9 @@
 
 <body data-spy="scroll" data-target="#ha-header">
 
-<div class="navbar navbar-default navbar-fixed-top" id="ha-header">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand logo2" href="index.php"></a> </div>
-    <div class="navbar-collapse collapse ">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php#top"><br>Главная</a></li>
-        <li><a href="sale.php"><br>Акции</a></li>
-        <li><a href="catalog.php"><br>Каталог</a></li>
-        <li><a href="uinfo.php">Полезная<br>Информация</a></li>
-        <li><a href="respond.php">Оставить<br>Отзыв</a></li>
-        <li><a href="#"><br>О нас</a></li>
-        <li><a href="index.php#contact"><br>Контакты</a></li>
-        <li class="min-info">г. Ростов-на-Дону<br>8 (928) 779-44-79</li>
-      </ul>
-    </div>
-    <!--/.nav-collapse --> 
-  </div>
-</div>
+<!-- Fixed navbar --> 
+<?php include('header.php'); ?>
+<!-- End Fixed navbar --> 
 
 
 
@@ -59,6 +44,27 @@
             <h1>Наши<small> // Акции</small></h1>
           </header>
         </div>
+
+        <?php
+        	$query=mysql_query("select* from sales") or die(mysql_error());
+        	while($result=mysql_fetch_assoc($query)){
+        		echo "
+					<div class=row>
+						<div class='col-xs-12 col-md-12 col-sm-12'>
+							<div class=sale_event>
+								<div><h2 class=header-sale>".$result['name']."</h2></div>
+								<div class=sale-container>
+									<img class=sale_icon src='assets/".$result['img']."' alt=sale />
+									<div class=sale_text><span>".$result['text']."</span>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        		";
+        	}
+        ?>
+<!--
         <div class="row">
 
           <div class="col-xs-12 col-md-12 col-sm-12">
@@ -73,6 +79,7 @@
           </div>
 
         </div>
+
          <div class="row">
 
           <div class="col-xs-12 col-md-12 col-sm-12">
@@ -100,8 +107,9 @@
             </div>
           </div>
           </div>
-
+-->
         </div>
+
       </div>
     </div>
   </div>

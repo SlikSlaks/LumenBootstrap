@@ -1,6 +1,3 @@
-<?PHP 
-include("connect.php");?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,56 +30,22 @@ include("connect.php");?>
 <?php include('header.php'); ?>
 <!-- End Fixed navbar --> 
 
-<div id="respond" class="respond">
+<div id="services" class="services ha-waypoint"  data-animate-down="ha-header-small" data-animate-up="ha-header-large">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12 col-sm-12">
         <div class=" container TitleSection">
           <header class="page-head">
-            <h1>Ваши<small> // Отзывы</small></h1>
+            <h1>О<small> // Нас</small></h1>
           </header>
         </div>
-
-      <div class="row">
-      <div class="col-xs-12 col-md-12 col-sm-12">
-        <?php 
-          $query=mysql_query("select* from responds where allowed='1'") or die(mysql_error());
-          while($result=mysql_fetch_assoc($query)){
-            echo"
-              <div class='respond_event'>
-              <div><span class='header-respond'>$result[name]</span></div>
-              <div class='respond-time'>$result[time]</div>
-              <div class='respond-container'>
-              <div class='respond_text'><span>$result[text]</span>
-              </div>
-              </div>
-              </div>
-            ";
-          }
-        ?>
-
-      </div>
-      </div>
-
-
-            <div class="contact_wrap" >
-              <h3>Оставьте отзыв</h3>
-              <form method="post" action="submit.php" id="passion_form">
-                <div class="form-group">
-                  <input type="text" size="50" name="contactname" id="InputName" value="" class="form-control" required placeholder="Ваше имя*"/>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" required rows="6" id="message"  placeholder="Ваш отзыв*"></textarea>
-                </div>
-                <button type="submit" class="btn btn-default">Отправить</button>
-              </form>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>
-</div>
+
+
+
 <!-- Footer -->
 <footer>
   <div class="container">
