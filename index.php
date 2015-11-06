@@ -1,4 +1,4 @@
-
+<?php include('connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +35,16 @@
 <div id="top" class="header">
   <div class="flexslider">
     <ul class="slides">
-      <li><img src="img/slider/1.jpg" alt="slider" /></li>
-      <li><img src="img/slider/1.jpg" alt="slider" />
-      </li>
-
+      <?php 
+          $query=mysql_query("select* from slider") or die(mysql_error());
+          while($result=mysql_fetch_assoc($query)){
+            echo"
+            <li><img src='assets/".$result['img']."' alt='slider' /></li>
+            ";
+          }
+      ?>
+<!--       <li><img src="img/slider/1.jpg" alt="slider" /></li>
+<li><img src="img/slider/2.jpg" alt="slider" /></li> -->
     </ul>
   </div>
 </div>
