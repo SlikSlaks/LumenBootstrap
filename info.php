@@ -30,7 +30,7 @@
 <?php include('header.php'); ?>
 <!-- End Fixed navbar --> 
 
-<div id="services" class="services ha-waypoint"  data-animate-down="ha-header-small" data-animate-up="ha-header-large">
+<div id="info" class="info ha-waypoint"  data-animate-down="ha-header-small" data-animate-up="ha-header-large">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12 col-sm-12">
@@ -39,10 +39,31 @@
             <h1>Полезная<small> // Информация</small></h1>
           </header>
         </div>
-       
+        <div class="info_container">
+          <div class="info_name"><h3>Как правильно надевать и снимать контактные линзы?</h3></div>
+          <div class="col-xs-6 col-md-6 col-sm-6">
+          <div class="info_text">
+            <ul>
+            <li><span><i class="fa fa-check"></i>Тщательно вымойте руки.</span></li>
+            <li><span><i class="fa fa-check"></i>Промойте линзы специальным раствором для удаления всех следов загрязнения 
+              (если это новые линзы или одноразовые линзы 1DAY ACUVUE® просто извлеките их из упаковки – раствор не нужен).</span></li>
+            <li><span><i class="fa fa-check"></i>Чтобы не перепутать линзы, первой всегда надевают линзу для правого глаза.</span></li>
+            <li><span><i class="fa fa-check"></i>Положите линзу на кончик указательного пальца, с помощью индикатора стороны убедитесь в том, что линза расположена верно.</span></li>
+            <li><span><i class="fa fa-check"></i>Другой рукой придерживайте верхнее веко так, чтобы не моргать.</span></li>
+            <li><span><i class="fa fa-check"></i>Другим пальцем той руки, которой надеваете линзу, оттяните вниз нижнее веко.</span></li>
+            <li><span><i class="fa fa-check"></i>Смотрите наверх и аккуратно положите линзу на часть глаза ниже зрачка.</span></li>
+            <li><span><i class="fa fa-check"></i>Медленно отпустите веки и на короткое время закройте глаза.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-6 col-sm-6">
+          <div class="info_video"><iframe class="video" width="100%" height="315" src="https://www.youtube.com/embed/BQbJHhkNYSg" frameborder="0" allowfullscreen></iframe></div>
+        </div>        
+        </div>
       </div>
     </div>
   </div>
+</div>
 
 
 

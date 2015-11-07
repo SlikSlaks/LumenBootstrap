@@ -46,7 +46,7 @@
 						<div>
 			              <div>".$result['name']."</div>
 			              <div>
-			              	<img src='../assets/".$result['img']."' alt='sale' />
+			              	<img class='sale_icon_admin' src='../assets/".$result['img']."' alt='sale' />
 			              	<div><span>".$result['text']."</span></div>
 			              </div>
 			              <a href=sales.php?edit=".$result['id'].">Редактировать</a>
