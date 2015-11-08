@@ -4,8 +4,8 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Lumen-Optika</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+	<title>Административная Панель - Люмен Оптика</title>
+	<link rel="shortcut icon" href="../assets/favicon.png">
 	<link rel="stylesheet" type="text/css" href="../css/custom.css">
 	</head>
 	<body>

@@ -1,3 +1,4 @@
+<?php include("connect.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,19 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="business, corporate, corporate website, creative, html5, marketing, multipurpose, responsive, site templates">
-<link rel="shortcut icon" href="img/favicon.png">
-<title>Каталог - Люмен Оптика</title>
+<link rel="shortcut icon" href="assets/favicon.png">
+<title>
+	<?php
+	if(!isset($_GET['brand'])){
+		echo "Каталог";
+	}else{
+		$query=mysql_query("SELECT brand FROM brands WHERE id='".mysql_escape_string($_GET['brand'])."'") or die(mysql_error());
+		$result=mysql_fetch_assoc($query);
+		echo $result['brand'];
+	}
+	?>
+	 - Люмен Оптика
+</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -15,8 +27,8 @@
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	  <link href="css/ie_8.css" rel="stylesheet" />
-      <script src="js/ie/html5shiv.js"></script>
-      <script src="js/ie/respond.min.js"></script>
+	  <script src="js/ie/html5shiv.js"></script>
+	  <script src="js/ie/respond.min.js"></script>
 <![endif]-->
 
 <!-- Add custom CSS here -->
@@ -34,203 +46,245 @@
 <!-- Portfolio -->
 <div id="portfolio" class="portfolio">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12 col-sm-12">
-        <div class=" container TitleSection">
-          <header class="page-head">
-            <h1>Каталог</h1>
-          </header>
-        </div>
-        <span class="catalog-text">В нашем каталоге вы найдете очки и линзы от ведущих производителей.
-        </span>
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-12 col-md-12 col-sm-12">
+		<div class="container TitleSection">
+		  <header class="page-head">
+		  	<?php
+				if(!isset($_GET['brand'])){
+					echo "<h1>Каталог</h1>";
+				}else{
+					echo "<h1>".$result['brand']."</h1>";
+				}
+			 ?>
+			
+		  </header>
+		</div>
+		<?php
+			if(!isset($_GET['brand'])){
+				echo "<span class='catalog-text'>В нашем каталоге вы найдете очки и линзы от ведущих производителей.</span>";
+			}
+		 ?>
+	  </div>
+	</div>
   </div>
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12 col-sm-12">
+	<div class="row">
+	  <div class="col-xs-12 col-md-12 col-sm-12">
 
-        <div id="filter_container" class="clearfix portfolioContainer">
+		<div id="filter_container" class="clearfix portfolioContainer">
+		<?php 
+			if(isset($_GET['brand'])){
+				$query=mysql_query("SELECT * FROM catalog WHERE brand='".mysql_escape_string($_GET['brand'])."'") or die(mysql_error());
+				while($result=mysql_fetch_assoc($query)){
+					echo "
+						<div class='element branding copywriting' data-category='branding'>
+						<div class='hexagon'> <a href=''> <span class='mask'></span> <img src='assets/".$result['img']."'  alt='filter'/> </a>
+						<div class='portfolio-title'>
+						<h4>".$result['model']."<span>".$result['model']."</span></h4>
+						</div>
+						</div>
+						</div>
+					";
+				}
+			}else{
+				$query=mysql_query("select * from brands") or die(mysql_error());
+				while($result=mysql_fetch_assoc($query)){
+					echo "
+						<div class='element branding copywriting' data-category='branding'>
+						<div class='hexagon'> <a href='catalog.php?brand=".$result['id']."'> <span class='mask'></span> <img src='assets/".$result['img']."'  alt='filter'/> </a>
+						<div class='portfolio-title'>
+						<h4>".$result['brand']."<span>".$result['brand']."</span></h4>
+						</div>
+						</div>
+						</div>
+					";
+				}
+			}
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		?>
+<!--
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-         
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		 
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
 
-          <div class="element branding copywriting" data-category="branding">
-            <div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
-              <div class="portfolio-title">
-                <h4>Ray Ban<span>test</span></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+		  <div class="element branding copywriting" data-category="branding">
+			<div class="hexagon"> <a href="#"> <span class="mask"></span> <img src="img/1.jpg"  alt="filter"/> </a>
+			  <div class="portfolio-title">
+				<h4>Ray Ban<span>test</span></h4>
+			  </div>
+			</div>
+		  </div>
+
+		 -->
+		</div>
+	  </div>
+	</div>
   </div>
 </div>
 <!-- /Portfolio --> 
@@ -240,19 +294,19 @@
 <!-- Footer -->
 <footer>
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-9 col-sm-12">
-        <p>&nbsp;</p>
-      </div>
-      <div class="col-xs-12 col-md-3 col-sm-12">
-        <ul class=" footer_social clearfix">
-          <li><a href="https://vk.com/club72960834"><i class="fa fa-vk"></i></a></li>
-          <li><a href="https://instagram.com/lumenoptica/"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="http://ok.ru/profile/226343630035"><i class="fa fa-odnoklassniki"></i></a></li>
-          <li class="go_top"><a href="#top"><i class="fa fa-chevron-circle-up"></i></a></li>
-        </ul>
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-12 col-md-9 col-sm-12">
+		<p>&nbsp;</p>
+	  </div>
+	  <div class="col-xs-12 col-md-3 col-sm-12">
+		<ul class=" footer_social clearfix">
+		  <li><a href="https://vk.com/club72960834"><i class="fa fa-vk"></i></a></li>
+		  <li><a href="https://instagram.com/lumenoptica/"><i class="fa fa-instagram"></i></a></li>
+		  <li><a href="http://ok.ru/profile/226343630035"><i class="fa fa-odnoklassniki"></i></a></li>
+		  <li class="go_top"><a href="#top"><i class="fa fa-chevron-circle-up"></i></a></li>
+		</ul>
+	  </div>
+	</div>
   </div>
 </footer>
 <!-- /Footer --> 

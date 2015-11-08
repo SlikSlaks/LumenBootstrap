@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="business, corporate, corporate website, creative, html5, marketing, multipurpose, responsive, site templates">
-<link rel="shortcut icon" href="img/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.png">
 <title>Люмен Оптика</title>
 
 <!-- Bootstrap core CSS -->
@@ -32,6 +32,7 @@
 <!-- End Fixed navbar --> 
 
 <!-- Full Page Image Header Area -->
+
 <div id="top" class="header">
   <div class="flexslider">
     <ul class="slides">
@@ -43,8 +44,7 @@
             ";
           }
       ?>
-<!--       <li><img src="img/slider/1.jpg" alt="slider" /></li>
-<li><img src="img/slider/2.jpg" alt="slider" /></li> -->
+
     </ul>
   </div>
 </div>
