@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 03 2015 г., 20:17
+-- Время создания: Ноя 08 2015 г., 21:41
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -23,17 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `brands`
+--
+
+CREATE TABLE IF NOT EXISTS `brands` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `brand` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `catalog`
 --
 
 CREATE TABLE IF NOT EXISTS `catalog` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `brand` varchar(255) NOT NULL,
+  `brand` int(255) NOT NULL,
   `model` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `info` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 

@@ -6,8 +6,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="business, corporate, corporate website, creative, html5, marketing, multipurpose, responsive, site templates">
-<link rel="shortcut icon" href="img/favicon.png">
-<title>Люмен Оптика</title>
+<link rel="shortcut icon" href="assets/favicon.png">
+<title>О Нас - Люмен Оптика</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
